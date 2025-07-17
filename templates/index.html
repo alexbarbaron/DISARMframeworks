@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISARM Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { display: flex; }
+        .column { width: 50%; padding: 10px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 4px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>DISARM Framework Dashboard</h1>
+    <div class="container">
+        <div class="column">
+            <h2>Red Team TTPs</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Tactic</th>
+                </tr>
+                {% for item in red %}
+                <tr>
+                    <td>{{ item.disarm_id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.tactic_id }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <h2>Blue Team Countermeasures</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Tactic</th>
+                </tr>
+                {% for item in blue %}
+                <tr>
+                    <td>{{ item.disarm_id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.tactic }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
